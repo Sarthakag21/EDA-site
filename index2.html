@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploratory Data Analysis (EDA)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fff;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #007BFF;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Exploratory Data Analysis (EDA)</h1>
+    <p>From History to Tools, Techniques and Practical Applications</p>
+  </header>
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p>Exploratory Data Analysis (EDA) is a crucial step in the data science process. It involves investigating datasets to summarize their main characteristics and uncover patterns, anomalies, and relationships using both statistical and visual techniques.</p>
+  </section>
+
+  <section>
+    <h2>2. History of EDA</h2>
+    <p>The concept of EDA was introduced by the American statistician John Tukey in the 1970s. Tukey emphasized the importance of visualizing data before formal modeling to better understand the data’s structure and detect underlying patterns or errors.</p>
+  </section>
+
+  <section>
+    <h2>3. Why EDA Matters (Use Cases)</h2>
+    <ul>
+      <li>Understanding distribution and spread of data</li>
+      <li>Identifying missing data and outliers</li>
+      <li>Uncovering hidden patterns and trends</li>
+      <li>Preprocessing decisions before machine learning</li>
+    </ul>
+    <p>Example: In healthcare, EDA is used to study patient data to detect health trends, identify risk factors, and improve decision-making.</p>
+  </section>
+
+  <section>
+    <h2>4. Key Features of EDA</h2>
+    <ul>
+      <li>Descriptive statistics</li>
+      <li>Data visualization</li>
+      <li>Outlier detection</li>
+      <li>Correlation analysis</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Techniques Used in EDA</h2>
+    <h3>5.1 Summary Statistics</h3>
+    <p>Include measures like mean, median, mode, standard deviation, skewness, and kurtosis to understand the basic distribution of the data.</p>
+
+    <h3>5.2 Bar Chart</h3>
+    <p>A bar chart is used to represent categorical data with rectangular bars. The length of each bar is proportional to the value it represents.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Bar_chart_example.svg" alt="Bar Chart Example">
+    <pre><code>import matplotlib.pyplot as plt
+categories = ['A', 'B', 'C']
+values = [10, 20, 15]
+plt.bar(categories, values)
+plt.title('Bar Chart Example')
+plt.show()</code></pre>
+
+    <h3>5.3 Histogram</h3>
+    <p>Histograms show the frequency distribution of a numerical variable. It's useful to understand the shape of the data distribution.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Histogram_of_arrivals_per_minute.png" alt="Histogram Example">
+    <pre><code>plt.hist(df['age'], bins=10)
+plt.title('Age Distribution')
+plt.show()</code></pre>
+
+    <h3>5.4 Box Plot</h3>
+    <p>A box plot shows the median, quartiles, and outliers of a dataset. It’s useful for identifying outliers and understanding distribution.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Boxplot_vs_PDF.svg" alt="Box Plot Example">
+    <pre><code>import seaborn as sns
+sns.boxplot(x=df['salary'])</code></pre>
+
+    <h3>5.5 Scatter Plot</h3>
+    <p>Scatter plots are used to study the relationship between two continuous variables.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Scatter_plot_with_regression_line.svg" alt="Scatter Plot Example">
+    <pre><code>sns.scatterplot(x='height', y='weight', data=df)</code></pre>
+
+    <h3>5.6 Correlation Matrix</h3>
+    <p>A correlation matrix shows how variables are related to each other, with values ranging from -1 to 1.</p>
+    <pre><code>import seaborn as sns
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')</code></pre>
+  </section>
+
+  <section>
+    <h2>6. Tools Commonly Used</h2>
+    <ul>
+      <li><strong>Python:</strong> pandas, matplotlib, seaborn, plotly</li>
+      <li><strong>R:</strong> ggplot2, tidyverse, dplyr</li>
+      <li><strong>Excel:</strong> Pivot tables, charts, summary stats</li>
+      <li><strong>Power BI / Tableau:</strong> Drag-and-drop dashboards and interactive visualizations</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Real-World EDA Example: Titanic Dataset</h2>
+    <p>The Titanic dataset is a classic for practicing EDA. It contains information about passengers on the Titanic, including their age, class, gender, and survival status.</p>
+    <pre><code>import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset('titanic')
+print(df.head())
+sns.countplot(x='survived', data=df)
+plt.title('Survival Count')
+plt.show()</code></pre>
+    <p>This basic plot shows how many people survived vs. died on the Titanic.</p>
+  </section>
+
+  <section>
+    <h2>8. Conclusion</h2>
+    <p>EDA is the foundation of any successful data project. It ensures that data scientists deeply understand their data before building predictive models. Visualizations and statistical summaries make patterns and problems in the data transparent and easy to interpret.</p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploratory Data Analysis (EDA)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fff;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #007BFF;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Exploratory Data Analysis (EDA)</h1>
+    <p>From History to Modern Tools and Techniques</p>
+  </header>
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p>Exploratory Data Analysis (EDA) is the process of analyzing data sets to summarize their main characteristics using visual methods and statistical techniques. It helps uncover patterns, spot anomalies, and test assumptions with the help of graphs and statistics.</p>
+  </section>
+
+  <section>
+    <h2>2. History of EDA</h2>
+    <p>EDA was pioneered by John Tukey in the 1970s. His work emphasized the importance of using visualizations to understand data before making assumptions or building models. His book "Exploratory Data Analysis" (1977) laid the foundation of this field.</p>
+  </section>
+
+  <section>
+    <h2>3. Use Cases of EDA</h2>
+    <ul>
+      <li>Detecting data quality issues and outliers</li>
+      <li>Identifying relationships between variables</li>
+      <li>Forming hypotheses for further testing</li>
+      <li>Preparing data for modeling</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Key Features of EDA</h2>
+    <ul>
+      <li>Visual inspection of data</li>
+      <li>Understanding data distribution</li>
+      <li>Uncovering trends, patterns, and anomalies</li>
+      <li>Using descriptive statistics</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Techniques Used in EDA</h2>
+    <ul>
+      <li>Summary statistics (mean, median, mode)</li>
+      <li>Data visualization (histograms, boxplots, scatter plots)</li>
+      <li>Correlation analysis</li>
+      <li>Handling missing values and outliers</li>
+    </ul>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/EDA_process.png" alt="EDA Process Diagram">
+  </section>
+
+  <section>
+    <h2>6. Tools Commonly Used</h2>
+    <ul>
+      <li><strong>Python:</strong> pandas, matplotlib, seaborn</li>
+      <li><strong>R:</strong> ggplot2, dplyr</li>
+      <li><strong>Excel:</strong> Pivot tables, charts</li>
+      <li><strong>Power BI / Tableau:</strong> Interactive data exploration</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Example: EDA in Python</h2>
+    <pre><code>import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("data.csv")
+print(df.describe())
+sns.boxplot(x=df["Salary"])
+plt.show()</code></pre>
+    <p>This simple example shows how you can use Python libraries to perform basic EDA and visualize salary distributions.</p>
+  </section>
+
+  <section>
+    <h2>8. Conclusion</h2>
+    <p>EDA is a critical first step in any data analysis process. It allows analysts and data scientists to make sense of the data before applying any models, ensuring that insights drawn are both accurate and actionable.</p>
+  </section>
+</body>
+</html>
