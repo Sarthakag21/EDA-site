@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploratory Data Analysis (EDA)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fff;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #007BFF;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Exploratory Data Analysis (EDA)</h1>
+    <p>From History to Tools, Techniques and Practical Applications</p>
+  </header>
+
+  <section style="display: flex; align-items: center; gap: 20px;">
+    <div style="flex: 2;">
+      <h2>1. Introduction</h2>
+      <p>Exploratory data analysis or "EDA" is a critical first step in analyzing the data. It is used by data scientists to analyze and investigate data sets and summarize their main characteristics, often employing data visualization methods.</p>
+      <p>Main reasons we use EDA:</p>
+      <ul>
+        <li>detection of mistakes</li>
+        <li>checking of assumptions</li>
+        <li>preliminary selection of appropriate models</li>
+        <li>determining relationships among the explanatory variables</li>
+      </ul>
+    </div>
+    <div style="flex: 1;">
+      <img src="/images/intro.avif" alt="Introduction to EDA">
+    </div>
+  </section>
+
+
+  <section style="display: flex; align-items: center; gap: 20px;">
+    <div style="flex: 2;">
+      <h2>2. History of EDA</h2>
+      <p>EDA was primarily developed by <b>John Tukey</b> starting in the 1970s as:</p>
+      <ul>
+          <li>procedures for analyzing data</li>
+          <li>techniques for interpreting the results of such procedures</li>
+          <li>ways of planning the gathering of data to make its analysis easier</li>
+          <li>more precise or more accurate</li>
+      </ul>
+    </div>
+    <div style="flex: 1;">
+      <img src="/images/history.avif" alt="History of EDA">
+    </div>
+  </section>
+
+  <section style="display: flex; align-items: center; gap: 20px;">
+    <div style="flex: 2;">
+      <h2>3. Steps Involved in EDA</h2>
+      <ol>
+          <li style="font-size: large;"><b>Data Collection</b></li>
+            <p>Collect the required data from various sources such as databases, web scraping, or APIs.</p>
+          <li style="font-size: large;"><b>Data Cleaning</b></li>
+            <ul>
+              <li>Handle missing values</li>
+              <li>Remove duplicates</li>
+              <li>Correct data types</li>
+            </ul>
+          <li style="font-size: large;"><b>Data Transformation</b></li>
+            <ul>
+              <li>Normalize or standardize the data</li>
+              <li>Aggregate or disaggregate data based on analysis</li>
+            </ul>
+          <li style="font-size: large;"><b>Data Exploration</b></li>
+            <ul>
+              <li><b>Univariate Analysis:</b> Analyze individual variables using summary statistics and visualizations (e.g., histograms, box plots).</li>
+              <li><b>Bivariate Analysis:</b> Analyze the relationship between two variables with scatter plots, correlation coefficients, and cross-tabulations.</li>
+              <li><b>Multivariate Analysis:</b> Investigate interactions between multiple variables using pair plots and correlation matrices.</li>
+            </ul>
+          <li style="font-size: large;"><b>Data Visualization</b></li>
+            <p>Visualize data distributions and relationships using visual tools such as bar charts, line charts, scatter plots, heatmaps, and box plots.</p>
+          <li style="font-size: large;"><b>Identify Patterns and Outliers</b></li>
+            <p>Detect patterns, trends, and outliers in the data using visualizations and statistical methods.</p>
+          <li style="font-size: large;"><b>Data Summarization</b></li>
+            <p>Summarize findings with descriptive statistics, visualizations, and key insights.</p>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Why EDA Matters (Use Cases)</h2>
+    <ul>
+      <li>Understanding distribution and spread of data</li>
+      <li>Identifying missing data and outliers</li>
+      <li>Uncovering hidden patterns and trends</li>
+      <li>Preprocessing decisions before machine learning</li>
+    </ul>
+    <p>Example: In healthcare, EDA is used to study patient data to detect health trends, identify risk factors, and improve decision-making.</p>
+  </section>
+
+  <section>
+    <h2>5. Key Features of EDA</h2>
+    <ul>
+      <li>Descriptive statistics</li>
+      <li>Data visualization</li>
+      <li>Outlier detection</li>
+      <li>Correlation analysis</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Types of EDA</h2>
+    <div style="display: flex; align-items: flex-start; gap: 40px; margin-top: 20px;">
+      <div style="flex: 1;">
+        <h3>6.1 Univariate Analysis</h3>
+        <ul>
+          <li>Focuses on analyzing a single variable at a time.</li>
+          <li>To understand the variable's distribution, central tendency, and spread.</li>
+          <li>Techniques used: mean, median, mode, histograms, box plots, etc.</li>
+        </ul>
+      </div>
+
+      <div style="flex: 1;">
+        <h3>6.2 Bivariate Analysis</h3>
+        <ul>
+          <li>Examines the relationship between two variables.</li>
+          <li>To understand how one variable affects or is associated with another.</li>
+          <li>Techniques used: scatter plots, line plots, pair plots, correlation coefficients, etc.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; gap: 40px; margin-top: 20px;">
+      <div style="flex: 1;">
+        <h3>6.3 Multivariate Analysis</h3>
+        <ul>
+          <li>Analyzes more than two variables simultaneously.</li>
+          <li>Helps to uncover complex interactions and relationships among variables.</li>
+          <li>Techniques used: multiple regression, PCA, factor analysis, clustering, etc.</li>
+        </ul>
+      </div>
+
+      <div style="flex: 1;">
+        <h3>6.4 Dimensionality Reduction</h3>
+        <ul>
+          <li>Reduces the number of input variables in a dataset.</li>
+          <li>Helps to remove noise and improve model performance.</li>
+          <li>Techniques used: PCA (Principal Component Analysis), t-SNE, LDA, etc.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. Tools Commonly Used</h2>
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+      <div style="flex: 2;">
+        <h3>7.1 Python Libraries</h3>
+        <ol type="a">
+          <li><b>Pandas:</b> Data cleaning, manipulation and Numerical computations </li>
+          <li><b>Matplotlib:</b> Basic plots like line charts, scatter plots, and bar charts.</li>
+          <li><b>Seaborn:</b> Advanced visualizations like heatmaps, violin plots, and pair plots.</li>
+        </ol>
+        <h3>7.2 R Libraries</h3>
+        <ol type="a">
+          <li><b>ggplot2:</b> Framework for creating graphics such as Complex and multi-layered visualizations. </li>
+          <li><b>Shiny:</b> package that makes building interactive web apps, i.e., Interactive data analysis applications.</li>
+          <li><b>Plotly:</b> Creating interactive visualizations.</li>
+        </ol>
+        <h3>7.3 Integrated Development Environments (IDEs)</h3>
+        <ol type="a">
+          <li><b>Jupyter Notebook:</b> open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and text.</li>
+          <li><b>RStudio:</b> integrated development environment for R that offers tools for writing and debugging code, building software, and analyzing data.</li>
+        </ol>
+        <h3>7.4 Data Visualization Tools</h3>
+        <ol type="a">
+          <li><b>Tableau:</b> Data visualization tool that facilitates the creation of various interactive and shareable charts and dashboards.</li>
+          <li><b>Power BI:</b> Microsoft business analytics service offering interactive reports & dashboards and business intelligence features.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>8. Techniques Used in EDA</h2>
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+      <div style="flex: 2;">
+        <h3>8.1 Box Plot</h3>
+        <ul>
+          <li>Box plots also known as box-and-whisker plots</li>
+          <li>Standardized way of displaying the distribution of data based on a five-number summary: minimum, first quartile (Q1), median, third quartile (Q3), and maximum.</li>
+        </ul>
+        <h4>Key Features:</h4>
+        <ul>
+          <li><b>Box:</b> Represents the interquartile range (IQR), which is the range between Q1 and Q3.</li>
+          <li><b>Median:</b> A vertical line within the box indicating the middle value of the data.</li>
+          <li><b>Whiskers:</b> Extend from the box to the minimum and maximum values within a certain range. </li>
+          <li><b>Outliers:</b> Data points that fall outside the whiskers, often displayed as individual points.</li>
+        </ul>
+      </div>
+      <div style="flex: 1; width: 100%;">
+        <img src="/images/boxplot.png" alt="Box Plot">
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+      <div style="flex: 2;">
+        <h3>8.2 Histogram</h3>
+        <ul>
+          <li>It is a graphical representation of the distribution of numerical data.</li>
+          <li>It uses bars to show the frequency of data points within specified intervals or bins.</li>
+        </ul>
+        <h4>Key Features:</h4>
+        <ul>
+          <li><b>Bins:</b> Data is grouped into ranges called bins or intervals. </li>
+          <li><b>Bars:</b> Each bin is represented by a bar, with the height of the bar indicating the frequency.</li>
+          <li><b>Frequency Density:</b> The height of the bar can represent either the frequency (count) or the frequency density (frequency divided by the bin width). </li>
+        </ul>
+      </div>
+      <div style="flex: 1; width: 100%;">
+        <img src="/images/histogram.png" alt="Histogram">
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+      <div style="flex: 2;">
+        <h3>8.3 Scatter Plot</h3>
+        <ul>
+          <li>It is a type of graph that displays values for typically two variables as a set of points on a two-dimensional plane. </li>
+          <li>It's used to visualize the relationship or correlation between these variables.</li>
+        </ul>
+        <h4>Key Features:</h4>
+        <ul>
+          <li><b>Cartesian Coordinates:</b> The plot uses a standard x-y coordinate system, where each axis represents one of the variables.</li>
+          <li><b>Correlation:</b> Scatter plots can help identify whether there is a relationship between the variables and the nature of that relationship (positive, negative, or no correlation).</li>
+        </ul>
+      </div>
+      <div style="flex: 1; width: 100%;">
+        <img src="/images/scatterplot.png" alt="ScatterPlot">
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+      <div style="flex: 2;">
+        <h3>8.4 Heat Map</h3>
+        <ul>
+          <li>It is a graphical representation of data where values are depicted by color.</li>
+          <li>It uses a system of color coding to represent different values, making it easy to visualize complex information and identify patterns or trends.</li>
+          <li>Commonly used in various fields, including web analytics, user experience (UX) design, and data visualization. </li>
+        </ul>
+        <h4>Key Features:</h4>
+        <ul>
+          <li><b>Color-Coded Data Representation:</b> It uses color intensity to represent different data values. Warmer colors usually indicate higher values, while cooler colors represent lower values. </li>
+          <li><b>Grid or Matrix Format:</b> Data is organized in a grid or matrix format, with each cell representing a specific data point. The color of each cell corresponds to the value of that data point. </li>
+        </ul>
+      </div>
+      <div style="flex: 1; width: 100%;">
+        <img src="/images/heatmap.png" alt="Heat Map" style="width: 700px; height: 300px;">
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+      <div style="flex: 2;">
+        <h3>8.5 Bar Chart</h3>
+        <ul>
+          <li>It is a chart that uses rectangular bars to display and compare data across different categories or groups. </li>
+          <li>The length or height of each bar is proportional to the value it represents.</li>
+        </ul>
+        <h4>Key Features:</h4>
+        <ul>
+          <li><b>Rectangular bars:</b> Data is represented by a series of rectangular bars.</li>
+          <li><b>Categorical data:</b> Bar charts are typically used to display data that can be categorized into distinct groups.</li>
+        </ul>
+      </div>
+      <div style="flex: 1; width: 100%;">
+        <img src="/images/barchart.png" alt="Bar chart">
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; align-items: flex-start; gap: 20px;">
+    <div style="flex: 2;">
+      <h2>9. Real-World EDA Example: Titanic Dataset</h2>
+      <p>The Titanic dataset is a classic for practicing EDA. It contains information about passengers on the Titanic, including their age, class, gender, and survival status.</p>
+      <pre style="background-color: #f4f4f4; padding: 10px; overflow-x: auto;">
+        <code>
+          import seaborn as sns
+          import pandas as pd
+          import matplotlib.pyplot as plt
+
+          df = sns.load_dataset('titanic')
+          print(df.head())
+          sns.countplot(x='survived', data=df)
+          plt.title('Survival Count')
+          plt.show()
+        </code>
+      </pre>
+      <p>This basic plot shows how many people survived vs. died on the Titanic.</p>
+    </div>
+
+    <div style="flex: 1;">
+      <img src="/images/titanic.png" alt="Titanic Plot Example" style="width: 100%; height: auto; padding-top: 140px;">
+    </div>
+  </section>
+
+  <section>
+    <h2>10. Common EDA Mistakes to Avoid</h2>
+    <ul>
+      <li>Ignoring missing values or assuming they are random</li>
+      <li>Overlooking data types and categorical encodings</li>
+      <li>Failing to explore variable relationships</li>
+      <li>Using inappropriate visualizations for the data type</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>11. Conclusion</h2>
+    <p>EDA is the foundation of any successful data project. It ensures that data scientists deeply understand their data before building predictive models. Visualizations and statistical summaries make patterns and problems in the data transparent and easy to interpret.</p>
+  </section>
+</body>
+</html>
